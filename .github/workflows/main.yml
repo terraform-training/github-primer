@@ -13,11 +13,11 @@ jobs:
           echo test, and deploy your project.
   validate:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - name: "Checkout"
-        uses: actions/checkout@master
-      - name: Terraform Validate
-        uses: volcano-coffee-company/terraform-validate@v1.0.0
-        with:
-          # Token for the repo. Can be passed in using {{ secrets.GITHUB_TOKEN }}
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: terraform plan
+        uses: dflook/terraform-plan@v1
