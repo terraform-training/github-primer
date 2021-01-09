@@ -3,5 +3,6 @@ variable "github_token" {
 }
 
 variable "github_organization" {
-  type = string
+  type    = string
+  default = "terraform-training"
 }

@@ -1,11 +1,11 @@
-resource "github_repository" "practice_template" {
-  name               = "practice-template"
-  description        = "My practice template"
+resource "github_repository" "tf-gcp-gke-training-repository" {
+  name               = "tf-gcp-gke-training-repository"
+  description        = "My training repo"
   auto_init          = true
   gitignore_template = "Terraform"
-  private            = false
+  visibility         = "private"
 }
 
 output "practice_template_ssh_clone" {
-  value = github_repository.practice_template.ssh_clone_url
+  value = github_repository.tf-gcp-gke-training-repository.ssh_clone_url
 }
