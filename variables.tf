@@ -1,5 +1,6 @@
 variable "github_token" {
-  type = string
+  type    = string
+  default = ""
 }
 
 variable "github_organization" {
